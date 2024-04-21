@@ -1,18 +1,21 @@
 // Card.js
 import React from 'react';
+//import { Image } from 'react-native';
 import { View, Text, StyleSheet } from 'react-native';
 
-const Card = ({ title, content }) => {
+const Card = ({ title, content,imageSource }) => {
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{title}</Text>
       <Text>{content}</Text>
+      {/*<Image>{imageSource}</Image>*/}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
+    position: 'absolute',
     backgroundColor: '#fff',
     borderRadius: 8,
     padding: 20,

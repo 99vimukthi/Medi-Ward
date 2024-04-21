@@ -23,13 +23,18 @@ export default function LoginScreen() {
             }
         }
     }
+    const goBack = () => {
+        navigation.goBack();
+    }
 
   return (
+    
     <View className="flex-1 bg-white" style={{backgroundColor:themeColors.bg}}>
+       
       <SafeAreaView className="flex">
         <View className="flex-row justify-start">
                 <TouchableOpacity
-                    onPress={()=>navigation.goBack()}
+                     onPress={goBack}
                     className="bg-yellow-400 p-2 rounded-tr-2xl rounded-bl-2xl ml-4"
                 >
                     <ArrowLeftIcon size="20" color="black"/>
@@ -100,7 +105,11 @@ export default function LoginScreen() {
                         <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>
                                 <Text className="font-semibold text-yellow-500">Sign Up</Text>
                          </TouchableOpacity>
+
+                        
+                         
                 </View>
+                
       </View>
     </View>
 

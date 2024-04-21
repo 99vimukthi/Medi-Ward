@@ -66,68 +66,7 @@ export default function LeaveForm() {
     setEndInputValue('');
   };
 
-{/*
-  const [date, setDate] = useState(new Date());
-  const [showPicker, setShowPicker] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const [endValue, setendValue] = useState('');
 
-
-
-
-  const showDatepicker = () => {
-    setShowPicker(true);
-  };
-
-  const onInputChange = (text) => {
-    setInputValue(text);
-  };
- 
-  const onInputChange2 = (text) => {
-    setInputValue(text);
-  };
-
-  const Change = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShowPicker(Platform.OS === 'Android');
-    setDate(currentDate);
-    setInputValue(currentDate.toISOString().split('T')[0]); // Format date for TextInput
-  };
-
-  const Change2 = (event, selectedDate) => {
-    const currentDate = selectedDate || date;
-    setShowPicker(Platform.OS === 'Android');
-    setDate(currentDate);
-    setendValue(currentDate.toISOString().split('T')[0]); // Format date for TextInput
-  };
-
-*****************************************************************************************************************
-*/}
-
-
-{/*}
-  const onSubmit = (data) => console.log(data);
-  const [date,setDate]=useState(new Date());
-  const [showPicker,setShowPicker]=useState(false);
-  const [startLeave,setStartleave]=useState();
-  const toggleDatepicker =()=>{
-    setShowPicker(!showPicker);
-  };
-
-  const onChange =({type},selectedDate)=>{
-        if(type==="set"){
-            const currentDate=selectedDate;
-            setDate(currentDate);
-
-            if(Platform.OS==="android"){
-                toggleDatepicker();
-                setStartleave(currentDate.toDateString());
-            }
-        }else{
-            toggleDatepicker();
-        }
-  };
-*/}
 
   return (
     <View  style={style.container}>
@@ -203,130 +142,17 @@ export default function LeaveForm() {
         name="reason"
       />
 
-  {/*
-   <View>
-    <Text style={style.label}>Date of commencing leave</Text>
-    {setShowPicker &&(
-        <DateTimePicker
-        mode="date"
-        display="spinner"
-        value={date}
-        onChange={onChange}
-
-     />
-    )}
-
-    {!showPicker &&(
-         <Pressable
-            onPress={toggleDatepicker}
-         >
-         <TextInput
-             style={style.input}
-             onChangeText={setStartleave}
-             value={startLeave}
-             editable={false}
-         />
-      </Pressable>
-     
-    )}
-    </View>
-    **************************************************************************************
-    */}
-
-{/*
-    <View>
-    <Text style={style.label}>Date of commencing leave</Text>
-    <Text>{date?.toString()}</Text>
-      <DatePicker
-          mode="date"
-          modal
-          open={open}
-
-          date={date}
-          onConfirm={value=>{
-            setOpen(false);
-            setDate(value);
-
-          }}
-          onCancel={()=>{
-            setOpen(false);
-          }}
-        />
-        <TouchableOpacity onPress={()=>setOpen(true)}>
-          <Text>Open date picker</Text>
-        </TouchableOpacity>
-    </View>
-        */}
-
-
-{/*
-<View>
-      <View>
-      <Text style={style.label}>Date of Commencing leave</Text>
-
-        <TextInput
-          placeholder="Select Date"
-          value={inputValue}
-          editable={false}
-          style={{ padding: 10, borderWidth: 1, marginBottom: 10 }}
-          onChangeText={onInputChange} // This is where the magic happens
-
-        />
-        <Button onPress={showDatepicker} title="Show Date Picker" />
-      </View>
-      {showPicker && (
-        <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          mode="date" // Change to 'time' for time picker
-          is24Hour={true}
-          display="default"
-          onChange={Change}
-        />
-      )}
-      <View>
-        <Text>Selected Date: {date.toISOString().split('T')[0]}</Text>
-      </View>
-    </View>
-
-
-    <View>
-      <View>
-      <Text style={style.label}>Date of Ending leave</Text>
-
-        <TextInput
-          placeholder="Select Date"
-          value={endValue}
-          editable={false}
-          style={{ padding: 10, borderWidth: 1, marginBottom: 10 }}
-        />
-        <Button onPress={showDatepicker} title="Show Date Picker" />
-      </View>
-      {showPicker && (
-        <DateTimePicker
-          testID="dateTimePicker2"
-          value={date}
-          mode="date" // Change to 'time' for time picker
-          is24Hour={true}
-          display="default"
-          onChange={Change2}
-        />
-      )}
-      <View>
-        <Text>Selected Date: {date.toISOString().split('T')[0]}</Text>
-      </View>
-    </View>
-      */}
+ 
 
 
 <View>
       <View>
-        <Text>Date of Commencing Leave:</Text>
+        <Text style={{ color: 'white' }}>Date of Commencing Leave:</Text>
         <TextInput
           placeholder="Select Start Date"
           value={startInputValue}
           editable={false}
-          style={{ padding: 10, borderWidth: 1, marginBottom: 10 }}
+          style={{ padding: 5, borderWidth: 1, marginBottom: 6 }}
         />
         <Button onPress={showStartDatepicker} title="Select Start Date" />
       </View>
@@ -343,12 +169,12 @@ export default function LeaveForm() {
       )}
 
       <View>
-        <Text>Date of Ending Leave Date:</Text>
+        <Text style={{ color: 'white' }}>Date of Ending Leave Date:</Text>
         <TextInput
           placeholder="Select End Date"
           value={endInputValue}
           editable={false}
-          style={{ padding: 10, borderWidth: 1, marginBottom: 10 }}
+          style={{ padding: 5, borderWidth: 1, marginBottom: 6 }}
         />
         <Button onPress={showEndDatepicker} title="Select End Date" />
       </View>
@@ -366,9 +192,9 @@ export default function LeaveForm() {
 
       <View style={style.button}>
          <Button onPress={resetDates} title="Reset Dates" />
-        <Text>Selected Date Range:</Text>
+       {/* <Text>Selected Date Range:</Text>
         <Text>Start Date: {startInputValue}</Text>
-        <Text>End Date: {endInputValue}</Text>
+       <Text>End Date: {endInputValue}</Text>*/}
       </View>
     </View>
         
@@ -411,11 +237,11 @@ const style=StyleSheet.create({
       },
       label: {
         color: 'white',
-        margin: 10,
+        margin: 6,
         marginLeft: 0,
       },
       button:{
-        marginTop: 20,
+        marginTop: 10,
         color: 'white',
         height: 40,
         borderRadius: 4,

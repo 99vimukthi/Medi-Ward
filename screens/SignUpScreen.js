@@ -13,7 +13,6 @@ export default function SignUpScreen() {
     const[email,setEmail]=useState('');
     const[password,setPassword]=useState('');
 
-
     const handleSubmit=async()=>{
         if(email&&password){
             try{
@@ -23,15 +22,18 @@ export default function SignUpScreen() {
             }
         }
     }
-   
+    const goBack = () => {
+        navigation.goBack();
+    }
   
 
   return (
     <View className="flex-1 bg-white" style={{backgroundColor:themeColors.bg}}>
+        
       <SafeAreaView className="flex">
         <View className="flex-row justify-start">
                 <TouchableOpacity
-                    onPress={()=>navigation.goBack()}
+                     onPress={goBack}A
                     className="bg-yellow-400 p-2 rounded-tr-2xl rounded-bl-2xl ml-4"
                 >
                     <ArrowLeftIcon size="20" color="black"/>
@@ -84,7 +86,7 @@ export default function SignUpScreen() {
                 <Text className="text-xl text-gray-700 font-bold text-center py-5">
                     Or
                 </Text>
-                <View className="flex-row justify-center space-x-12">
+                {/*<View className="flex-row justify-center space-x-12">
                         <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
                             <Image source={require('../assets/icons/google.png')}
                                     className="w-10 h-10"/>
@@ -100,13 +102,16 @@ export default function SignUpScreen() {
                                     className="w-10 h-10"/>
                         </TouchableOpacity>
 
-                </View>
+  </View>*/}
 
                 <View className="flex-row justify-center mt-7">
                     <Text className="text-gray-500 font-semibold">Already have an account?</Text>
                         <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
                                 <Text className="font-semibold text-yellow-500">Login</Text>
                          </TouchableOpacity>
+                         <TouchableOpacity onPress={goBack}>
+                                <Text>Go Back</Text>
+                        </TouchableOpacity>
                 </View>
       </View>
     </View>
