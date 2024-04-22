@@ -52,7 +52,7 @@ const HomeTabs = () => {
     >
       <Tab.Screen name="Welcome" component={WelcomeScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
-      <Tab.Screen name="Details" component={DetailsScreen} />
+      <Tab.Screen name="Shedule" component={DetailsScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Leave" component={LeaveForm} />
     </Tab.Navigator>
@@ -74,6 +74,8 @@ export default function AppNavigation() {
         <Drawer.Screen name="Settings" component={SettingsScreen} />
         <Drawer.Screen name="News" component={NewsScreen} />
         <Drawer.Screen name="Leave" component={LeaveForm} />
+        <Drawer.Screen name="Shedule" component={DetailsScreen} />
+
 
       </Drawer.Navigator>
     </NavigationContainer>
@@ -87,7 +89,7 @@ const AuthStack = () => {
       
       >
         
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen}/>
         <Stack.Screen name="Login" component={LoginScreen} />
 
       </Stack.Navigator>

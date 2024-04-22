@@ -1,10 +1,14 @@
+import { setStatusBarBackgroundColor } from 'expo-status-bar';
 import * as React from 'react';
 import { Avatar, Button, Card, Text } from 'react-native-paper';
+import { themeColors } from '../theme';
+import { View } from 'react-native';
 
 const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
 const WelcomeScreen = () => (
-  <Card style={styles.card}>
+  <View className="flex-1" style={{ backgroundColor: themeColors.bg }}>
+    <Card style={styles.card} >
     <Card.Title 
       title="Welcome to MediWard" 
       subtitle="About Us" 
@@ -19,6 +23,9 @@ const WelcomeScreen = () => (
       </Text>
     </Card.Content>
   </Card>
+
+  </View>
+ 
 );
 
 const styles = {

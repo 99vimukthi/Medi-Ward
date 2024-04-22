@@ -106,38 +106,33 @@ export default function DetailsScreen() {
           </Swiper>
         </View>
 
-       {/* <View style={{ flex: 1, paddingHorizontal: 16, paddingVertical: 24 }}>
+        <View style={{ flex: 1, paddingHorizontal: 16, paddingVertical: 24 }}>
           <Text style={styles.subtitle}>{value.toDateString()}</Text>
           <View style={styles.placeholder}>
             <View style={styles.placeholderInset}>
-
-               Replace with your content 
-
+               {/* Replace with your content */}
+               <Text>This is the placeholder content for the selected date.</Text>
             </View>
           </View>
         </View>
-              */}
-          
-
-        {/*calender Add*/}
+              
+        {/* Calendar */}
         <View>
-             <TouchableOpacity 
-                  onPress={()=>setShowModal(true)}
-                  style={{backgroundColor:'black',borderRadius:10,margin:40 , padding:10,width:200,alignItems:'center'}}>
-                  <Text style={{color:'white',fontSize:22}}>Show Calender</Text>
-              </TouchableOpacity>
+          <TouchableOpacity 
+            onPress={()=>setShowModal(true)}
+            style={{backgroundColor:'black',borderRadius:10,margin:40 , padding:10,width:200,alignItems:'center'}}>
+            <Text style={{color:'white',fontSize:22}}>Show Calendar</Text>
+          </TouchableOpacity>
 
-              <Modal visible={showmodal} animationType="fade">
-                <Calendar style={{borderRadius:10, elevation:4,margin:10}}
-                          onPress={date=>{
-                            console.log(date)
-                            setShowModal(false)
-                          }}
-                
-                />
-              </Modal>
+          <Modal visible={showmodal} animationType="fade">
+            <Calendar style={{borderRadius:10, elevation:4,margin:10}}
+                      onPress={date=>{
+                        console.log(date)
+                        setShowModal(false)
+                      }}
+            />
+          </Modal>
         </View>
-        
 
         <View style={styles.footer}>
           <TouchableOpacity
@@ -228,7 +223,7 @@ const styles = StyleSheet.create({
   },
   placeholderInset: {
     borderWidth: 4,
-    borderColor: '#e5e7eb',
+    borderColor: '#e5e7eb',  //detailsScreen
     borderStyle: 'dashed',
     borderRadius: 9,
     flexGrow: 1,
